@@ -3,7 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 748px;
+  --breakpoint-lg: 968px;
+  --breakpoint-xl: 1200px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-mono: var(--font-jetbrainsMono);
@@ -118,9 +123,38 @@
   body {
     @apply bg-primary text-white font-mono leading-loose;
   }
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
 }
+
 @layer components {
+}
+
+@layer utilities {
   .container {
-    @apply p-[15px] mx-auto;
+    @apply w-full mx-auto px-[15px];
+
+    @media (min-width: 640px) {
+      @apply w-[90%];
+    }
+    @media (min-width: 748px) {
+      @apply w-[85%];
+    }
+    @media (min-width: 968px) {
+      @apply w-[80%];
+    }
+    @media (min-width: 1200px) {
+      @apply w-[75%];
+    }
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
   }
 }
