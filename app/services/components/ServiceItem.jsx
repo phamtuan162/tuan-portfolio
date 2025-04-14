@@ -22,19 +22,19 @@ const ServiceItem = ({ service }) => {
 
   return (
     <div className="border-b border-white/20 h-full cursor-pointer">
-      <div className="flex-1 flex flex-col justify-center gap-6 group ">
+      <div className="flex-1 flex flex-col justify-center gap-3 group ">
         <div className="w-full flex items-center justify-between">
           <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
             {service.num}
           </div>
           <Link
             href={service.href}
-            className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex-center hover:-rotate-45"
+            className="w-[48px] h-[48px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex-center hover:-rotate-45"
           >
-            <BsArrowDownLeft className="text-primary text-3xl" />
+            <BsArrowDownLeft className="text-primary text-2xl" />
           </Link>
         </div>
-        <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+        <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
           {service.title}
         </h2>
 
@@ -43,8 +43,8 @@ const ServiceItem = ({ service }) => {
           className={`${
             expanded
               ? ""
-              : "line-clamp-3 overflow-hidden text-ellipsis text-white/60"
-          }`}
+              : "line-clamp-3 overflow-hidden text-ellipsis text-white/60 "
+          } leading-[1.5]`}
         >
           {service.description}
         </p>

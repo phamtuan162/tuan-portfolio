@@ -17,14 +17,14 @@ const ResumePage = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex-center py-12 xl:py-0"
+      className="min-h-[80vh] flex-center py-12 xl:py-0 "
     >
       <div className="container">
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] xl:max-w-[300px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
@@ -32,7 +32,7 @@ const ResumePage = () => {
           </TabsList>
 
           {/* content */}
-          <div className="min-h-[40vh] w-full">
+          <div className="min-h-[40vh] w-full mb-2">
             {/* experience */}
             <TabsContent className="w-full" value="experience">
               <Experience />

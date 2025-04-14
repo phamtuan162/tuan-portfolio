@@ -30,7 +30,6 @@ const handleSubmit = (event) => {
   event.preventDefault();
 
   const form = new FormData(event.target);
-  console.log(form);
 
   for (const [key, value] of form.entries()) {
     console.log(`${key}:`, value);
@@ -55,21 +54,22 @@ const ContactPage = () => {
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
               onSubmit={handleSubmit}
             >
-              <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
-              <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores, quisquam.
+              <h3 className="text-3xl text-accent">Let&apos;s work together</h3>
+              <p className="text-white/60 leading-[1.5]">
+                Feel free to reach out for any collaboration, project inquiries,
+                or just to say hello. I&apos;m always open to new opportunities
+                and connections.
               </p>
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
                   type="first_name"
-                  placeholder="First_name"
+                  placeholder="First name"
                   name="firs_name"
                 />
                 <Input
                   type="last_name"
-                  placeholder="Last_name"
+                  placeholder="Last name"
                   name="last_name"
                 />
                 <Input type="email" placeholder="Email Address" name="email" />
@@ -108,13 +108,13 @@ const ContactPage = () => {
           </div>
 
           {/* info */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
+          <div className="flex-1 flex items-center xl:justify-end xl:items-start order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">
-                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                      <div className="text-[28px]">{item.icon}</div>
+                    <div className="w-[48px] h-[48px] xl:w-[60px] xl:h-[60px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                      <div className="text-[22px]">{item.icon}</div>
                     </div>
                     <div className="flex-1">
                       <p className="text-white/60">{item.title}</p>
