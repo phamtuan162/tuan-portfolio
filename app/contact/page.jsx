@@ -1,9 +1,10 @@
 "use client";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import toast from "react-hot-toast";
+
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -16,6 +17,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import SubmitBtn from "./components/btnSubmit";
+import { sendEmail } from "@/actions/sendEmail";
+
 const info = [
   { icon: <FaPhoneAlt />, title: "Phone", description: "0397822119" },
   { icon: <FaEnvelope />, title: "Email", description: "tnpham352@gmail.com" },
@@ -25,16 +29,6 @@ const info = [
     description: "An Duong, Hai Phong, VietNam",
   },
 ];
-
-const handleSubmit = (event) => {
-  event.preventDefault();
-
-  const form = new FormData(event.target);
-
-  for (const [key, value] of form.entries()) {
-    console.log(`${key}:`, value);
-  }
-};
 
 const ContactPage = () => {
   return (
@@ -52,9 +46,19 @@ const ContactPage = () => {
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-              onSubmit={handleSubmit}
+              action={async (formData) => {
+                const { data, error } = await sendEmail(formData);
+                console.log(data);
+
+                if (error) {
+                  toast.error(error);
+                  return;
+                }
+
+                toast.success("Email sent successfully!");
+              }}
             >
-              <h3 className="text-3xl text-accent">Let&apos;s work together</h3>
+              <h3 className="text-3xl text-accent">Contact Me</h3>
               <p className="text-white/60 leading-[1.5]">
                 Feel free to reach out for any collaboration, project inquiries,
                 or just to say hello. I&apos;m always open to new opportunities
@@ -63,53 +67,71 @@ const ContactPage = () => {
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
-                  type="first_name"
-                  placeholder="First name"
-                  name="firs_name"
+                  type="text"
+                  placeholder="First Name"
+                  name="first_name"
+                  required
                 />
                 <Input
-                  type="last_name"
-                  placeholder="Last name"
+                  type="text"
+                  placeholder="Last Name"
                   name="last_name"
+                  required
                 />
-                <Input type="email" placeholder="Email Address" name="email" />
-                <Input type="phone" placeholder="Phone number" name="phone" />
-              </div>
 
-              {/* select */}
-              <div>
-                <Select>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  required
+                />
 
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Select a service</SelectLabel>
-                      <SelectItem value="est">Web Development</SelectItem>
-                      <SelectItem value="cst">Ui/Ux Design</SelectItem>
-                      <SelectItem value="mst">Logo Design</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                <Input
+                  type="tel"
+                  placeholder="Phone number"
+                  name="phone"
+                  required
+                />
               </div>
+              {/*  select */}
+
+              <Select name="subject" required>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="What would you like to discuss?" />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Reason for contact</SelectLabel>
+                    <SelectItem value="job">Job opportunity</SelectItem>
+                    <SelectItem value="project">
+                      Freelance/Project collaboration
+                    </SelectItem>
+                    <SelectItem value="feedback">
+                      Feedback on portfolio
+                    </SelectItem>
+                    <SelectItem value="chat">Just want to connect</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
 
               {/* textarea */}
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here."
+                name="message"
+                required
+                maxLength={500}
               />
 
               {/* btn */}
-              <Button type="submit" size="md" className="max-w-40">
-                Send Message
-              </Button>
+              <SubmitBtn />
             </form>
           </div>
 
           {/* info */}
           <div className="flex-1 flex items-center xl:justify-end xl:items-start order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
+            <ul className="flex flex-col gap-6">
               {info.map((item, index) => {
                 return (
                   <li key={index} className="flex items-center gap-6">

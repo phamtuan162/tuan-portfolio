@@ -1,4 +1,5 @@
 import { JetBrains_Mono } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           <StairTransition />
           <PageTransition>{children}</PageTransition>
         </main>
+        <Toaster position="top-right" />
       </body>
     </html>
   );
