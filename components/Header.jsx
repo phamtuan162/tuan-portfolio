@@ -5,31 +5,31 @@ import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 
 const Header = () => {
-  return (
-    <header className="py-8 xl:py-6 text-white ">
-      <div className="container flex justify-between items-center">
-        <Link href="/">
-          <h1 className="text-2xl font-semibold">
-            Minh Tuấn
-            <span className="text-accent">.</span>
-          </h1>
-        </Link>
+    return (
+        <header className="py-8 xl:py-6 text-white ">
+            <div className="container flex justify-between items-center">
+                <Link href="/">
+                    <h1 className="text-2xl font-semibold">
+                        Minh Tuấn
+                        <span className="text-accent">.</span>
+                    </h1>
+                </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden xl:flex items-center gap-8">
-          <Nav />
-          <Link href="/contact">
-            <Button>Hire me</Button>
-          </Link>
-        </div>
+                {/* Desktop nav */}
+                <div className="hidden xl:flex items-center gap-8">
+                    <Nav />
+                    <Link href="/contact">
+                        <Button>Hire me</Button>
+                    </Link>
+                </div>
 
-        {/* Mobile nav */}
+                {/* Mobile nav */}
 
-        <div className="xl:hidden">
-          <MobileNav />
-        </div>
-      </div>
-    </header>
-  );
+                <div className="xl:hidden">
+                    <MobileNav />
+                </div>
+            </div>
+        </header>
+    );
 };
 export default Header;
