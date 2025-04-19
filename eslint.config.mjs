@@ -1,29 +1,27 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+    baseDirectory: __dirname,
 });
 
 const eslintConfig = [
-  ...compat.extends([
-    'next/core-web-vitals',
-    './eslint-config/base.js',
-    './eslint-config/react.js',
-    './eslint-config/prettier.js',
-  ]),
-  {
-    rules: {
-      quotes: ['error', 'double'],
-      semi: ['error', 'always'],
-      'no-console': 'warn',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    },
-  },
+    ...compat.extends({
+        extends: ["next/core-web-vitals", "prettier"],
+        rules: {
+            semi: ["error", "always"],
+            quotes: ["error", "double"],
+            "prefer-arrow-callback": "error",
+            "prefer-template": "error",
+            "react/no-unescaped-entities": "off",
+            "@typescript-eslint/quote": "off",
+            "no-useless-escape": "off",
+        },
+    }),
 ];
 
 export default eslintConfig;
