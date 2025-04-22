@@ -22,8 +22,6 @@ export default function Home() {
                             enthusiastic about the job offered and dedicated to
                             the company.
                             <br />
-                            Know Frontend and a little about Backend.
-                            <br />
                             Ability to learn and apply new technology quickly.
                         </p>
 
