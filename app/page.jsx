@@ -22,15 +22,19 @@ export default function Home() {
                             passionate about web development, and fully
                             committed to any opportunity offered.
                             <br />
-                            Proficient in building frontend with
-                            <strong>React.js</strong> and
+                            <br />
+                            Proficient in building frontend with{" "}
+                            <strong>React.js</strong> and{" "}
                             <strong>Next.js</strong>.
                             <br />
-                            Familiar with backend development using
+                            <br />
+                            Familiar with backend development using{" "}
                             <strong>Node.js</strong>.
+                            <br />
                             <br />
                             Fast learner with the ability to quickly adapt to
                             new technologies.
+                            <br />
                             <br />
                             Highly motivated, responsible, and enthusiastic in
                             teamwork.
