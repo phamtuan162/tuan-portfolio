@@ -24,8 +24,10 @@ export default function Home() {
                             <br />
                             Proficient in building frontend with
                             <strong>React.js</strong> and
-                            <strong>Next.js</strong>. Familiar with backend
-                            development using <strong>Node.js</strong>.
+                            <strong>Next.js</strong>.
+                            <br />
+                            Familiar with backend development using
+                            <strong>Node.js</strong>.
                             <br />
                             Fast learner with the ability to quickly adapt to
                             new technologies.
