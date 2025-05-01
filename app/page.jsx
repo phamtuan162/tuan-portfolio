@@ -17,12 +17,21 @@ export default function Home() {
                             <br />
                             <span className="text-accent">Minh Tuấn</span>
                         </h1>
-                        <p className="max-w-[540px] mb-9 text-white/80">
-                            No work experience but will try hard to learn, be
-                            enthusiastic about the job offered and dedicated to
-                            the company.
+                        <p className="max-w-[540px] mb-9 text-white/80 leading-relaxed">
+                            No work experience yet, but I am eager to learn,
+                            passionate about web development, and fully
+                            committed to any opportunity offered.
                             <br />
-                            Ability to learn and apply new technology quickly.
+                            Proficient in building frontend with
+                            <strong>React.js</strong> and
+                            <strong>Next.js</strong>. Familiar with backend
+                            development using <strong>Node.js</strong>.
+                            <br />
+                            Fast learner with the ability to quickly adapt to
+                            new technologies.
+                            <br />
+                            Highly motivated, responsible, and enthusiastic in
+                            teamwork.
                         </p>
 
                         {/* btn and socials */}
