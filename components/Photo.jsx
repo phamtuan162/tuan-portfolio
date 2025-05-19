@@ -12,7 +12,9 @@ const Photo = () => {
                     opacity: 1,
                     transition: { delay: 2, duration: 0.4, ease: "easeIn" },
                 }}
+                className="relative w-[300px] h-[300px] xl:w-[444px] xl:h-[444px]"
             >
+                {/* Ảnh nền */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{
@@ -23,7 +25,7 @@ const Photo = () => {
                             ease: "easeInOut",
                         },
                     }}
-                    className="absolute w-[298px] h-[298px] xl:w-[440px] xl:h-[440px] mix-blend-lighten"
+                    className="absolute inset-0 rounded-full overflow-hidden mix-blend-lighten"
                 >
                     <Image
                         src="/assets/photo5.png"
@@ -31,19 +33,20 @@ const Photo = () => {
                         quality={100}
                         fill
                         alt=""
-                        className="object-contain rounded-full"
+                        className="object-contain"
                     />
                 </motion.div>
 
+                {/* Viền SVG */}
                 <motion.svg
-                    className="w-[300px] h-[300px] xl:w-[444px] xl:h-[444px] "
+                    className="absolute inset-0 w-full h-full"
                     fill="transparent"
-                    viewBox="0 0 506 506"
+                    viewBox="0 0 504 504"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <motion.circle
-                        cx="253"
-                        cy="253"
+                        cx="252"
+                        cy="252"
                         r="250"
                         stroke="#00ff99"
                         strokeWidth="4"
