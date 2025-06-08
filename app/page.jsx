@@ -5,36 +5,48 @@ import { Button } from "@/components/ui/button";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
+const bulletStyle =
+    ""; /*"relative before:absolute before:-left-4 before:top-1/2 before:-translate-y-1/2 before:w-1.5 before:h-1.5 before:bg-white/80 before:rounded-full";
+ */
 export default function Home() {
     return (
         <section className="h-full">
             <div className="container h-full">
                 <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-16">
                     <div className="text-center xl:text-left order-2 xl:order-none">
-                        <span className="text-xl">Fullstack Developer</span>
+                        <span className="text-xl">
+                            Web Development Intern (Full-Stack)
+                        </span>
                         <h1 className="h1 mb-6">
                             Hello I&apos;m
                             <br />
                             <span className="text-accent">Minh Tuấn</span>
                         </h1>
-                        <p className="max-w-[540px] mb-9 text-white/80 leading-relaxed">
-                            No work experience yet, but I am eager to learn,
-                            passionate about web development, and fully
-                            committed to any opportunity offered.
-                            <br />
-                            Proficient in building frontend with{" "}
-                            <strong>React.js</strong> and{" "}
-                            <strong>Next.js</strong>.
-                            <br />
-                            Familiar with backend development using{" "}
-                            <strong>Node.js</strong>.
-                            <br />
-                            Fast learner with the ability to quickly adapt to
-                            new technologies.
-                            <br />
-                            Highly motivated, responsible, and enthusiastic in
-                            teamwork.
-                        </p>
+                        <div className="max-w-[540px] mb-9 text-white/80 leading-relaxed">
+                            <p>
+                                Experienced in executing and completing a
+                                graduation thesis project, detailed in the Work
+                                section below. This project enhanced my
+                                full-stack web development skills, from database
+                                design to frontend implementation.
+                            </p>
+                            <ul className="list-disc pl-6">
+                                <li className={bulletStyle}>
+                                    Proficient in building frontend with
+                                    <strong className="ml-1">React.js</strong>
+                                    and
+                                    <strong className="ml-1">Next.js</strong>.
+                                </li>
+                                <li className={bulletStyle}>
+                                    Familiar with backend development using
+                                    <strong className="ml-1">Node.js</strong>.
+                                </li>
+                                <li className={bulletStyle}>
+                                    Fast learner, highly motivated, responsible,
+                                    and enthusiastic in teamwork.
+                                </li>
+                            </ul>
+                        </div>
 
                         {/* btn and socials */}
                         <div className="flex flex-col xl:flex-row items-center gap-8">
