@@ -128,7 +128,7 @@ const WorkPage = () => {
                                 </Link>
                                 {/* demo project button */}
                                 <Link
-                                    href={project?.github || "/"}
+                                    href={project?.youtube || "/"}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
