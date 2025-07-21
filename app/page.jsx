@@ -14,9 +14,7 @@ export default function Home() {
             <div className="container h-full">
                 <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-16">
                     <div className="text-center xl:text-left order-2 xl:order-none">
-                        <span className="text-xl">
-                            Web Development Intern (Full-Stack)
-                        </span>
+                        <span className="text-xl">Web Development Intern</span>
                         <h1 className="h1 mb-6">
                             Hello I&apos;m
                             <br />
@@ -33,7 +31,7 @@ export default function Home() {
                             <ul className="list-disc pl-6">
                                 <li className={bulletStyle}>
                                     Proficient in building frontend with
-                                    <strong className="ml-1">React.js</strong>
+                                    <strong className="mx-1">React.js</strong>
                                     and
                                     <strong className="ml-1">Next.js</strong>.
                                 </li>
@@ -51,7 +49,7 @@ export default function Home() {
                         {/* btn and socials */}
                         <div className="flex flex-col xl:flex-row items-center gap-8">
                             <a
-                                href="/CV_Pham_Minh_Tuan_Intern_Web.pdf"
+                                href="/CV_Pham_Minh_Tuan_Intern_Front_end.pdf"
                                 download
                             >
                                 <Button
