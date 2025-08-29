@@ -10,9 +10,8 @@ const Photo = () => {
             <Image
                 src="/assets/photo5.png"
                 alt="Photo"
-                fill
+                loading="lazy"
                 className="object-cover rounded-full"
-                priority
                 quality={75} // giảm dung lượng
                 sizes="(max-width: 768px) 300px, 444px" // responsive
             />
