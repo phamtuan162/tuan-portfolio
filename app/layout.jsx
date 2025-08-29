@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
-                // Favicon cho trình duyệt desktop
                 <link
                     rel="icon"
                     type="image/png"
@@ -34,20 +33,20 @@ export default function RootLayout({ children }) {
                     sizes="16x16"
                     href="/assets/favicon/favicon-16x16.png"
                 />
-                // Favicon cho iOS (iPhone/iPad)
+
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
                     href="/assets/favicon/apple-icon-180x180.png"
                 />
-                // Favicon cho Android
+
                 <link
                     rel="icon"
                     type="image/png"
                     sizes="192x192"
                     href="/assets/favicon/android-icon-192x192.png"
                 />
-                // Manifest & Windows
+
                 <link rel="manifest" href="/assets/favicon/manifest.json" />
                 <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta
@@ -56,6 +55,7 @@ export default function RootLayout({ children }) {
                 />
                 <meta name="theme-color" content="#ffffff" />
             </head>
+
             <body className={jetbrainsMono.variable}>
                 <Header />
                 <main>
