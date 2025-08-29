@@ -5,9 +5,6 @@ import { Button } from "@/components/ui/button";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
-const bulletStyle =
-    ""; /*"relative before:absolute before:-left-4 before:top-1/2 before:-translate-y-1/2 before:w-1.5 before:h-1.5 before:bg-white/80 before:rounded-full";
- */
 export default function Home() {
     return (
         <section className="h-full">
@@ -29,17 +26,17 @@ export default function Home() {
                                 design to frontend implementation.
                             </p>
                             <ul className="list-disc pl-6">
-                                <li className={bulletStyle}>
+                                <li>
                                     Proficient in building frontend with
                                     <strong className="mx-1">React.js</strong>
                                     and
                                     <strong className="ml-1">Next.js</strong>.
                                 </li>
-                                <li className={bulletStyle}>
+                                <li>
                                     Familiar with backend development using
                                     <strong className="ml-1">Node.js</strong>.
                                 </li>
-                                <li className={bulletStyle}>
+                                <li>
                                     Fast learner, highly motivated, responsible,
                                     and enthusiastic in teamwork.
                                 </li>
