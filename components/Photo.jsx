@@ -5,16 +5,19 @@ import Image from "next/image";
 
 const Photo = () => {
     return (
-        <div className="relative w-[300px] h-[300px] xl:w-[444px] xl:h-[444px] aspect-square">
+        <div
+            className="relative w-[300px] xl:w-[444px] rounded-full overflow-hidden"
+            style={{ aspectRatio: "1 / 1" }} // giữ container vuông → giảm CLS
+        >
             {/* Ảnh nền responsive */}
             <Image
                 src="/assets/photo5.png"
                 alt="Photo"
                 fill
-                className="object-cover rounded-full"
+                className="object-cover"
                 priority
-                quality={75} // giảm dung lượng
-                sizes="(max-width: 768px) 300px, 444px" // responsive
+                quality={75}
+                sizes="(max-width: 768px) 300px, 444px"
             />
 
             {/* Overlay animation opacity */}
@@ -22,7 +25,7 @@ const Photo = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 rounded-full overflow-hidden mix-blend-lighten"
+                className="absolute inset-0 mix-blend-lighten"
             />
 
             {/* Viền SVG */}
