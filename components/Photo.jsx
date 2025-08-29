@@ -7,7 +7,7 @@ const Photo = () => {
     return (
         <div
             className="relative w-[300px] xl:w-[444px] rounded-full overflow-hidden"
-            style={{ aspectRatio: "1 / 1" }} // giữ container vuông → giảm CLS
+            style={{ aspectRatio: "1 / 1", minWidth: 300, minHeight: 300 }} // giữ container cố định → giảm CLS
         >
             {/* Ảnh nền responsive */}
             <Image
@@ -25,7 +25,7 @@ const Photo = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 0.4, ease: "easeInOut" }}
-                className="absolute inset-0 mix-blend-lighten"
+                className="absolute inset-0 mix-blend-lighten pointer-events-none"
             />
 
             {/* Viền SVG */}
