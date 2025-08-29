@@ -22,14 +22,25 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <head>
                 {/* Favicon chuẩn */}
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+                <link
+                    rel="icon"
+                    href="/assets/favicon/favicon.ico"
+                    sizes="any"
+                />
+                <link
+                    rel="icon"
+                    type="image/svg+xml"
+                    href="/assets/favicon/favicon.svg"
+                />
 
                 {/* Apple Touch Icon */}
-                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                <link
+                    rel="apple-touch-icon"
+                    href="/assets/favicon/apple-touch-icon.png"
+                />
 
                 {/* Manifest cho PWA */}
-                <link rel="manifest" href="/site.webmanifest" />
+                <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
                 {/* Windows Tile */}
                 <meta name="msapplication-TileColor" content="#ffffff" />
