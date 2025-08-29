@@ -10,10 +10,12 @@ const Photo = () => {
             <Image
                 src="/assets/photo5.png"
                 alt="Photo"
-                loading="lazy"
+                fill // fill container → tránh layout shift
                 className="object-cover rounded-full"
+                priority // preload ngay, dùng cho ảnh quan trọng (Hero/Avatar)
                 quality={75} // giảm dung lượng
                 sizes="(max-width: 768px) 300px, 444px" // responsive
+                style={{ aspectRatio: "1 / 1" }} // giữ container vuông → tránh CLS
             />
 
             {/* Overlay animation opacity */}
